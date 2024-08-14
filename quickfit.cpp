@@ -1,9 +1,5 @@
 #include "quickfit.h"
-#include <QMessageBox>
-#include <QtSql/QSqlDatabase>
-#include <QtSql/QSqlQuery>
-#include <QtSql/QSqlError>
-#include <QFormLayout>
+#include "iostream"
 
 quickfit::quickfit(QWidget *parent) : QWidget(parent) {
     QGroupBox *groupboxcal = new QGroupBox("", this);
@@ -36,9 +32,7 @@ quickfit::quickfit(QWidget *parent) : QWidget(parent) {
     });
 
     QFormLayout *formLayout = new QFormLayout;
-   // QWidget *formContainer = new QWidget;
     QGroupBox *formContainer = new QGroupBox;
-
     formLayout->setFormAlignment(Qt::AlignHCenter);
     formLayout->addRow(activityLabel, activityInput);
     formLayout->addRow(setsLabel, setsInput);
@@ -58,9 +52,23 @@ quickfit::~quickfit() {
 
 }
 
+void quickfit::viewData(const QDate &date) {
+
+}
+
 void quickfit::onSelectedDate() {
     QDate selectedDate = calwidget->selectedDate();
     QMessageBox::information(this, "Date Selected", "Selected Date: " + selectedDate.toString());
+
+    QSqlTableModel *model = new QSqlTableModel(this, QSqlDatabase::database());
+    model->setTable("fitness_log");
+    model->setFilter(selectedDate.toString(Qt::ISODate));
+    model->select();
+
+    QTableView *workoutdata = new QTableView;
+    workoutdata->setModel(model);
+    workoutdata->hideColumn(0);
+    workoutdata->show();
 }
 
 void quickfit::logActivity(const QDate &date, const QString &activity, const QString &sets, const QString &reps) {
@@ -95,8 +103,8 @@ void quickfit::initDatabase() {
     QSqlQuery query;
     query.exec("CREATE TABLE IF NOT EXISTS fitness_log ("
                "id INTEGER PRIMARY KEY AUTOINCREMENT, "
-               "date TEXT, "
-               "activity TEXT, "
-               "sets INTEGER, "
-               "reps INTEGER)");
+               "Date TEXT, "
+               "Activity TEXT, "
+               "Sets INTEGER, "
+               "Reps INTEGER)");
 }

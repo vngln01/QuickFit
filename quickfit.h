@@ -14,6 +14,12 @@
 #include <QPushButton>
 #include <QtSql/QSqlDatabase>
 #include <QCalendarWidget>
+#include <QMessageBox>
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlError>
+#include <QFormLayout>
+#include <QTableView>
+#include <QtSql/QSqlTableModel>
 
 class quickfit : public QWidget {
     Q_OBJECT
@@ -25,6 +31,7 @@ public:
 private slots:
     void onSelectedDate();
     void logActivity(const QDate &date, const QString &activity, const QString &sets, const QString &reps);
+    void viewData(const QDate &date);
 
 private:
     QCalendarWidget *calwidget;
