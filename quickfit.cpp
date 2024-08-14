@@ -1,5 +1,4 @@
 #include "quickfit.h"
-#include "iostream"
 
 quickfit::quickfit(QWidget *parent) : QWidget(parent) {
     QGroupBox *groupboxcal = new QGroupBox("", this);
@@ -62,7 +61,7 @@ void quickfit::onSelectedDate() {
 
     QSqlTableModel *model = new QSqlTableModel(this, QSqlDatabase::database());
     model->setTable("fitness_log");
-    model->setFilter(selectedDate.toString(Qt::ISODate));
+    model->setFilter(QString("Date = '%1'").arg(selectedDate.toString(Qt::ISODate)));
     model->select();
 
     QTableView *workoutdata = new QTableView;
