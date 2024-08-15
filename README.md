@@ -11,10 +11,11 @@ This app also serves as a project based way to learn C++ and QT6 for myself.
 3. Non-intrusive and completely offline  
 
 ## Features Planned
-1. Autocompletion of activities based on what the user has previously entered
-2. Grouping of activities based on muscle groups
-3. Graph data for specific workouts to see lifetime progression
-4. ...
+1. Add ability to press DEL key to remove highlighted entry
+2. Autocompletion of activities based on what the user has previously entered
+3. Grouping of activities based on muscle groups
+4. Graph data for specific workouts to see lifetime progression
+5. ...
 
 ### Todo Improvements (for myself):
 1. Improve commenting
