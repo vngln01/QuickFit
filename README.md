@@ -3,7 +3,7 @@ A simple, lightweight desktop application made to enable the user to log fitness
 
 This app also serves as a project based way to learn C++ and QT6 for myself.
 
-![Alt text](./quickfit.png?raw=true "QuickFit");
+![Alt text](./quickfit.png?raw=true "QuickFit")
 
 ## Features
 1. Integrated calendar with everything available on a single screen
