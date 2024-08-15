@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
     quickfit *fitnesswidget = new quickfit(&mainWindow);
     mainWindow.setCentralWidget(fitnesswidget);
 
-    // Set window properties
+    // Set window properties based on screen resolution
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect screenSize = screen->geometry();
     int height = screenSize.height();

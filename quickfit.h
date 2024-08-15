@@ -12,15 +12,15 @@
 #include <QVBoxLayout>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QtSql/QSqlDatabase>
 #include <QCalendarWidget>
 #include <QMessageBox>
-#include <QtSql/QSqlQuery>
-#include <QtSql/QSqlError>
 #include <QFormLayout>
 #include <QTableView>
-#include <QtSql/QSqlTableModel>
 #include <QHeaderView>
+#include <QtSql/QSqlDatabase>
+#include <QtSql/QSqlTableModel>
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlError>
 
 class quickfit : public QWidget {
     Q_OBJECT

@@ -13,7 +13,8 @@ This app also serves as a project based way to learn C++ and QT6 for myself.
 ## Features Planned
 1. Autocompletion of activities based on what the user has previously entered
 2. Grouping of activities based on muscle groups
-3. ..
+3. Graph data for specific workouts to see lifetime progression
+4. ...
 
 ### Todo Improvements (for myself):
 1. Improve commenting
