@@ -3,7 +3,7 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = simplefitness
+TARGET = QuickFit
 INCLUDEPATH += .
 QT += widgets core sql quick gui
 

@@ -3,6 +3,7 @@
 quickfit::quickfit(QWidget *parent) : QWidget(parent) {
     //Create necessary calendar objects and default date to today
     calwidget = new QCalendarWidget(this);
+    calwidget->setVerticalHeaderFormat(QCalendarWidget::NoVerticalHeader);
     calwidget->setSelectedDate(QDate::currentDate());
     //Create all appropriate labels/inputs for features and logging pushbutton
     QLabel *activityLabel = new QLabel("Activity:", this);
