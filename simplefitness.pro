@@ -20,3 +20,6 @@ SOURCES += main.cpp \
 
 HEADERS += \
     quickfit.h
+
+RESOURCES += \
+    resources.qrc

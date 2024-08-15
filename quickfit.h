@@ -20,6 +20,7 @@
 #include <QFormLayout>
 #include <QTableView>
 #include <QtSql/QSqlTableModel>
+#include <QHeaderView>
 
 class quickfit : public QWidget {
     Q_OBJECT
@@ -30,7 +31,7 @@ public:
 
 private slots:
     void onSelectedDate();
-    void logActivity(const QDate &date, const QString &activity, const QString &sets, const QString &reps);
+    void logActivity(const QDate &date, const QString &activity, const QString &sets, const QString &reps, const QString &weights);
     void viewData(const QDate &date);
 
 private:
@@ -38,6 +39,8 @@ private:
     QLineEdit *activityInput;
     QLineEdit *setsInput;
     QLineEdit *repsInput;
+    QLineEdit *weightsInput;
+    QTableView *workoutdata = new QTableView;
     void initDatabase();
 };
 

@@ -11,13 +11,14 @@
 #include <QDate>
 #include <QMessageBox>
 #include "quickfit.h"
+#include <QIcon>
 
 #define WINDOWSCALE 2
 
 int main(int argc, char **argv) {
     QApplication app(argc, argv);
     QMainWindow mainWindow;
-
+    mainWindow.setWindowIcon(QIcon(":./logo.png"));
     quickfit *fitnesswidget = new quickfit(&mainWindow);
     mainWindow.setCentralWidget(fitnesswidget);
 
